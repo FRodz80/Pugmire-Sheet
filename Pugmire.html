@@ -1,0 +1,274 @@
+<p style="text-align: center;">
+	<img src="https://i.imgur.com/ZJoc4mX.jpg" style="width: 50%;" />
+</p>
+
+
+
+<table style="text-align: left; width: 100%;" cellpadding="2" cellspacing="2">
+	   <tbody>
+	        <tr>
+	            <td><h3>Name:</h3></td>
+	            <td><input type="text" name="attr_character_name"></td>
+	            <td><h3>Calling:</h3></td>
+	            <td><input type="text" name="attr_calling"></td>
+	            <td><h3>Breed:</h3></td>
+	            <td><input type="text" name="attr_breed"></td>
+	        </tr>
+	        <tr>
+	            <td><h3>Family:</h3></td>
+	            <td><input type="text" name="attr_family"></td>
+	            <td><h3>Background:</h3></td>
+	            <td><input type="text" name="attr_background"></td>
+	            <td><h3>Level:</h3></td>
+	            <td><input type="text" name="attr_level"></td>
+	        </tr>
+	   </tbody>
+</table>
+<hr/>
+<input type="radio" name="attr_tab" class="sheet-tab sheet-tab1" value="1" title="Core" checked="checked" /><span></span>
+<input type="radio" name="attr_tab" class="sheet-tab sheet-tab2" value="2" title="Spells" /><span></span>
+
+<div class="sheet-tab-content sheet-tab1">
+    
+<br>
+<div class="sheet-3colrow">
+  <div class="sheet-col" style="width: 23%;">
+  <table style="width: 100%;" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td></td>
+      <th style="text-align: center;"><h3>Base</h3></th>
+      <th style="text-align: center;"><h3>Mod</h3></th>
+    </tr>
+    <tr>
+      <td><button type="roll" name="roll_TestAttack" value="/roll 1d20 + @{StrMod}"><b>STR</b></button></td>
+      <td style="text-align: center;"><input name="attr_Str" class="sheet-short" type="number"></td>
+      <td style="text-align: center;"><input name="attr_StrMod" type="number"></td>
+    </tr>
+    <tr>
+      <td><button type="roll" name="roll_TestAttack" value="/roll 1d20 + @{DexMod}"><b>DEX</b></button></td>
+      <td style="text-align: center;"><input name="attr_Dex" class="sheet-short" type="number"></td>
+      <td style="text-align: center;"><input name="attr_DexMod" type="number"></td>
+    </tr>
+    <tr>
+      <td><button type="roll" name="roll_TestAttack" value="/roll 1d20 + @{ConMod}"><b>CON</b></button></td>
+      <td style="text-align: center;"><input name="attr_Con" class="sheet-short" type="number"></td>
+      <td style="text-align: center;"><input name="attr_ConMod" type="number"></td>
+    </tr>
+    <tr>
+      <td><button type="roll" name="roll_TestAttack" value="/roll 1d20 + @{IntMod}"><b>INT</b></button></td>
+      <td style="text-align: center;"><input name="attr_Int" class="sheet-short" type="number"></td>
+      <td style="text-align: center;"><input name="attr_IntMod" type="number"></td>
+    </tr>
+    <tr>
+      <td><button type="roll" name="roll_TestAttack" value="/roll 1d20 + @{WisMod}"><b>WIS</b></button></td>
+      <td style="text-align: center;"><input name="attr_Wis" class="sheet-short" type="number"></td>
+      <td style="text-align: center;"><input name="attr_WisMod" type="number"></td>
+    </tr>
+    <tr>
+      <td><button type="roll" name="roll_TestAttack" value="/roll 1d20 + @{ChaMod}"><b>CHA</b></button></td>
+      <td style="text-align: center;"><input name="attr_Cha" class="sheet-short" type="number"></td>
+      <td style="text-align: center;"><input name="attr_ChaMod" type="number"></td>
+    </tr>
+    <tr>
+      <td><h4>Prof Bonus</h4></td>
+      <td style="text-align: left;"><input name="attr_AptB" type="number" value="2"></td>
+    </tr>
+  </tbody>
+</table>
+ </div>
+   <div class="sheet-col" style="width: 23%;">
+      <table style="width: 100%;" cellspacing="2">
+          <tbody>
+            <tr>
+                <th colspan="3" style="text-align: center;"><h3>Saving Throws</h3></th>
+            </tr>
+            <tr>
+                <td style="width: 10%; text-align: center;"><input type="checkbox" style="width: 15px;" name="attr_savprofstr" value="@{AptB}" /></td>
+                <td style="text-align: center; width: 40%;"><input name="attr_StrSav" class="sheet-short" type="number" value="@{StrMod} + @{savprofstr}" disabled="true" /></td>
+                <td style="text-align: center; width: 50%;"><button type="roll" name="roll_SaveThrow" value="/roll 1d20 + @{StrSav}"><b>STR</b></button></td>
+            </tr>
+            <tr>
+                <td style="width: 10%; text-align: center;"><input type="checkbox" style="width: 15px;" name="attr_savprofdex" value="@{AptB}" /></td>
+                <td style="text-align: center;"><input name="attr_DexSav" class="sheet-short" type="number" value="@{DexMod} + @{savprofdex}" disabled="true" /></td>
+                <td style="text-align: center;"><button type="roll" name="roll_SaveThrow" value="/roll 1d20 + @{DexSav}"><b>DEX</b></button></td>
+            </tr>
+            <tr>
+                <td style="width: 10%; text-align: center;"><input type="checkbox" style="width: 15px;" name="attr_savprofcon" value="@{AptB}" /></td>
+                <td style="text-align: center;"><input name="attr_ConSav" class="sheet-short" type="number" value="@{ConMod} + @{savprofcon}" disabled="true" /></td>
+                <td style="text-align: center;"><button type="roll" name="roll_SaveThrow" value="/roll 1d20 + @{ConSav}"><b>CON</b></button></td>
+            </tr>
+            <tr>
+                <td style="width: 10%; text-align: center;"><input type="checkbox" style="width: 15px;" name="attr_savprofint" value="@{AptB}" /></td>
+                <td style="text-align: center;"><input name="attr_IntSav" class="sheet-short" type="number" value="@{IntMod} + @{savprofint}" disabled="true" /></td>
+                <td style="text-align: center;"><button type="roll" name="roll_SaveThrow" value="/roll 1d20 + @{IntSav}"><b>INT</b></button></td>
+            </tr>
+            <tr>
+                <td style="width: 10%; text-align: center;"><input type="checkbox" style="width: 15px;" name="attr_savprofwis" value="@{AptB}" /></td>
+                <td style="text-align: center;"><input name="attr_WisSav" class="sheet-short" type="number" value="@{WisMod} + @{savprofwis}" disabled="true" /></td>
+                <td style="text-align: center;"><button type="roll" name="roll_SaveThrow" value="/roll 1d20 + @{WisSav}"><b>WIS</b></button></td>
+            </tr>
+            <tr>
+                <td style="width: 10%; text-align: center;"><input type="checkbox" style="width: 15px;" name="attr_savprofcha" value="@{AptB}" /></td>
+                <td style="text-align: center;"><input name="attr_ChaSav" class="sheet-short" type="number" value="@{ChaMod} + @{savprofcha}" disabled="true" /></td>
+                <td style="text-align: center;"><button type="roll" name="roll_SaveThrow" value="/roll 1d20 + @{ChaSav}"><b>CHA</b></button></td>
+            </tr>
+          </tbody>
+      </table>
+  </div>
+  <div class="sheet-col" style="width: 43%;">
+    <table style="width: 100%;">
+        <tbody>
+            <tr>
+                <th style="text-align: center;" colspan="2"><h3>Stamina Points</h3></th>
+                <th style="text-align: center;"><h3>Stamina Dice</h3></th>
+            </tr>    
+            <tr>    
+                <td style="text-align: right;">
+                    <input type="text" name="attr_StamC" style="text-align: center; width: 70px;" placeholder="Current">
+                </td>
+                <td style="text-align: left;">
+                    <input type="text" name="attr_StamM" style="text-align: center; width: 70px;" placeholder="Maximum">
+                </td>
+                <td style="text-align: center;">
+                    <input type="text" name="attr_StamD" style="text-align: center; width: 70px;">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    
+    <table style="width: 100%;">
+        <tbody>
+            <tr>
+                <th style="text-align: center;"><h3>Defense</h3></th>
+                <th style="text-align: center;"><h3>Initiative</h3></th>
+                <th style="text-align: center;" colspan="2"><h3>Speed</h3></th>
+            </tr>
+            <tr>
+                <td style="text-align: center;">
+                    <input type="text" name="attr_Def" style="text-align: center; width: 50px;">
+                </td>
+                <td style="text-align: center;">
+                    <input type="text" name="attr_Init" style="text-align: center; width: 50px;">
+                </td>
+                <td style="text-align: right;">
+                    <input type="text" name="attr_Speed2" style="text-align: center; width: 50px;" placeholder="2 Legs">
+                </td>
+                <td style="text-align: left;">
+                    <input type="text" name="attr_Speed4" style="text-align: center; width: 50px;" placeholder="4 Legs">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    
+    <table style="width: 50%;" align="center">
+        <tbody>
+            <tr>
+                <th style="text-align: center;" colspan="3">Death Save Failure</th>
+             </tr>
+            <tr>
+                <td style="text-align: center; width: 33%;">
+                    <input type="checkbox" name="attr_Dsave1" style="width: 20px;" value="0" />
+                </td>
+                <td style="text-align: center; width: 33%;">
+                    <input type="checkbox" name="attr_Dsave2" style="width: 20px;" value="0" />
+                </td>
+                <td style="text-align: center; width: 33%;">
+                    <input type="checkbox" name="attr_Dsave3" style="width: 20px;" value="0" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+
+<hr/>
+
+<div class="sheet-2colrow">
+  <div class="sheet-col">
+      <table>
+          <tbody>
+              <tr>
+                  <td style="text-align: center; width: 167px;"><h3>Attack Name</h3></td>
+                  <td style="text-align: center; width: 96px;"><h3>Base Dmg</h3></td>
+                  <td style="text-align: center; width: 80px;"><h3>Str/Dex</h3></td>
+                  <td style="text-align: center; width: 35px;"><h3>Prof</h3></td>
+              </tr>
+          </tbody>
+      </table>
+<fieldset class="repeating_attacks">
+      <table>
+          <tbody>
+              <tr>
+                 <td>
+                     <button type="roll" style="width: 26px;" name="roll_attack" value="/roll 1d20 + @{StrDexMod} + @{profattack}"></button>
+                     <input type="text" name="attr_AttackName" style="width: 130px;">
+                 </td>
+                 <td style="text-align: center;"><input type="text" style="text-align: center; width: 80px; margin: 8px;" name="attr_AttDam">
+                     
+                 </td>
+                 <td style="width: 80px; text-align: center;"><select style="width: 75px; margin-top: 8px;" name="attr_StrDexMod">
+                     <option value="@{StrMod}">STR</option>
+                     <option value="@{DexMod}">DEX</option>
+                 </select>
+                     
+                 </td>
+                 <td>
+                     <input type="checkbox" style="width: 36px;" name="attr_profattack" value="@{AptB}" />
+                 </td>
+              </tr>
+              <tr>
+                  <td colspan="4"><input type="text" name="attr_qualities" style="width: 100%;" placeholder="Qualities"></td>
+              </tr>
+          </tbody>
+      </table>
+    </fieldset>
+  </div>
+
+<div class="sheet-col">
+    <table>
+          <tbody>
+              <tr>
+                  <td style="text-align: center; width: 202px;"><h3>Name</h3></td>
+                  <td style="text-align: center; width: 80px;"><h3>Type</h3></td>
+                  <td style="text-align: center; width: 80px;"><h3>Attribute</h3></td>
+              </tr>
+          </tbody>
+      </table>
+  <fieldset class="repeating_skills">
+    <table>
+	<tbody>
+        <tr>
+            <td>
+                <button type="roll" style="width: 26px;" name="roll_aptitude" value="/roll 1d20 + @{AptMod} + @{AptB}"></button>
+                <input type="text" name="attr_AptName">
+            </td>
+            <td style="width: 80px; text-align: center;"><select style="width: 75px; margin-top: 8px;" name="attr_AptTrait">
+                <option value="Skill">Skill</option>
+                <option value="Trick">Trick</option>
+                </select>
+            </td>
+            <td style="width: 80px; text-align: center;"><select style="width: 75px; margin-top: 8px;" name="attr_AptMod">
+                <option value="0"></option>
+                <option value="@{StrMod}">STR</option>
+                <option value="@{DexMod}">DEX</option>
+                <option value="@{ConMod}">CON</option>
+                <option value="@{IntMod}">INT</option>
+                <option value="@{WisMod}">WIS</option>
+                <option value="@{ChaMod}">CHA</option>
+            </select>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+  </fieldset>
+  </div>
+</div>
+</div>
+<div class="sheet-tab-content sheet-tab2">
+    
+</div>
