@@ -1,0 +1,86 @@
+div.sheet-tab-content
+{ display: none; }
+
+input.sheet-tab1:checked ~ div.sheet-tab1,
+input.sheet-tab2:checked ~ div.sheet-tab2,
+input.sheet-tab3:checked ~ div.sheet-tab3,
+input.sheet-tab4:checked ~ div.sheet-tab4,
+input.sheet-tab5:checked ~ div.sheet-tab5,
+input.sheet-tab6:checked ~ div.sheet-tab6,
+input.sheet-tab7:checked ~ div.sheet-tab7 {
+    display: block;
+}
+
+input.sheet-tab
+{
+    width: 110px;
+    height: 20px;
+    position: relative;
+    left: 6px; 
+    margin: 0px ;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 5px 5px 5px 5px;
+}
+
+input.sheet-tab::before
+{
+    
+    content: attr(title);
+    
+    color: black;
+    text-align: center;
+    display: inline-block;
+    background: #96805b;
+    width: 110px;
+    height: 20px;
+    font-size: 16px;
+    font-weight:700;
+    border:1px solid black;
+}
+
+input.sheet-tab:checked::before
+{
+    background: #726142;
+    
+    /* border-bottom-color: #fff; */
+}
+
+input.sheet-tab:not(:first-child)::before
+{
+    border-left: none;
+}
+
+div.sheet-tab-content
+{
+    /*border: 1px solid #a8a8a8;
+    border-top-color: #000;*/    
+    margin: 2px 0 0 5px;
+    padding: 5px;
+}
+
+.charsheet .sheet-col {
+    border: 1px solid red;
+}
+
+.charsheet input {
+	display: inline-block;
+	width: 165px;
+}
+
+.charsheet {
+	background-image: url("https://i.imgur.com/fE8z2a4.jpg");
+}
+
+.charsheet table td, .charsheet table th {
+    border: 1px solid black;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.charsheet button {
+    width: 75px;
+}
+
+.charsheet .repeating_skills, .charsheet .repeating_attacks {
+    background: yellow;
+}
